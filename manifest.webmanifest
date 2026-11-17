@@ -1,0 +1,43 @@
+{
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": [
+    "finance",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "name": "안심신호등 — 보내기 전 3초 확인",
+  "short_name": "안심신호등",
+  "description": "코인을 보내기 전에 받는 사람 주소에 공개 보안 데이터 기준 위험 신호가 있는지 3초 만에 확인하는 무료·비수익 참고 도구입니다. 제작·운영: 안심랩 (AnsimLab)",
+  "background_color": "#f2f4f6",
+  "theme_color": "#f2f4f6"
+}

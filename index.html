@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>안심신호등 — 보내기 전 3초 확인</title>
+    <meta name="description" content="이더리움·베이스·아비트럼·BNB 체인 등 10개 체인과 솔라나·트론 주소를 한 번에 확인하세요. 보내기 전에 받는 사람 주소에 공개 보안 데이터 기준 위험 신호가 있는지 3초 만에 확인하는 무료·비수익 참고 도구입니다." />
+    <meta name="keywords" content="코인 주소 위험 신호 확인, 코인 송금 전 체크, 안심신호등, 이더리움 베이스 아비트럼 폴리곤 솔라나 트론" />
+    <meta name="author" content="안심랩 (AnsimLab)" />
+    <meta name="publisher" content="안심랩 (AnsimLab)" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wlgh9291-cmd.github.io/ansim-signal/" />
+    <!-- 절대 주소: Vercel 프로덕션 도메인 확정 후 1회 반영 (2026-11-17) -->
+    <meta name="theme-color" content="#f2f4f6" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.webmanifest" vite-ignore />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="안심신호등" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="안심신호등" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png" vite-ignore />
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16.png" vite-ignore />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" vite-ignore />
+
+    <!-- 카카오톡·SNS 링크 공유 (OpenGraph) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="안심신호등" />
+    <meta property="og:title" content="안심신호등 — 보내기 전 3초 확인" />
+    <meta property="og:description" content="이더리움·베이스·아비트럼·BNB 체인 등 10개 체인과 솔라나·트론 주소를 한 번에 확인하세요. 보내기 전에 받는 사람 주소에 공개 보안 데이터 기준 위험 신호가 있는지 3초 만에 확인하는 무료·비수익 참고 도구입니다." />
+    <meta property="og:image" content="https://wlgh9291-cmd.github.io/ansim-signal/og/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="안심신호등 서비스 소개 이미지" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:url" content="https://wlgh9291-cmd.github.io/ansim-signal/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="안심신호등 — 보내기 전 3초 확인" />
+    <meta name="twitter:description" content="이더리움·베이스·아비트럼·BNB 체인 등 10개 체인과 솔라나·트론 주소를 한 번에 확인하세요. 보내기 전에 받는 사람 주소에 공개 보안 데이터 기준 위험 신호가 있는지 3초 만에 확인하는 무료·비수익 참고 도구입니다." />
+    <meta name="twitter:image" content="https://wlgh9291-cmd.github.io/ansim-signal/og/og-image.png" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "안심신호등",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "ko",
+  "description": "이더리움·베이스·아비트럼·BNB 체인 등 10개 체인과 솔라나·트론 주소를 확인하는 무료·비수익 참고 도구입니다.",
+  "url": "https://wlgh9291-cmd.github.io/ansim-signal/",
+  "author": { "@type": "Organization", "name": "안심랩 (AnsimLab)" },
+  "publisher": { "@type": "Organization", "name": "안심랩 (AnsimLab)" },
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  }
+}
+    </script>
+
+    <!-- 텔레그램 미니앱 SDK. 일반 브라우저에서는 로드에 실패해도 아래 어댑터가 조용히 건너뜁니다. -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+      /* 환경 어댑터 — 텔레그램 미니앱 안이면 ready·expand를 자동 실행하고,
+         일반 브라우저·PWA 환경에서는 아무 것도 하지 않습니다(오류 0건). */
+      (function () {
+        try {
+          var tg = window.Telegram && window.Telegram.WebApp;
+          if (tg && typeof tg.ready === 'function') tg.ready();
+          if (tg && typeof tg.expand === 'function') tg.expand();
+          if (tg && typeof tg.disableVerticalSwipes === 'function') {
+            try { tg.disableVerticalSwipes(); } catch (e) {}
+          }
+          if (tg && typeof tg.setHeaderColor === 'function') {
+            try { tg.setHeaderColor('#f2f4f6'); } catch (e) {}
+          }
+          if (tg && typeof tg.setBackgroundColor === 'function') {
+            try { tg.setBackgroundColor('#f2f4f6'); } catch (e) {}
+          }
+        } catch (e) {}
+        /* PWA 서비스 워커 등록 — 보안 문맥(https·localhost)에서만, 실패해도 앱 동작에는 지장 없음 */
+        if (
+          'serviceWorker' in navigator &&
+          (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+        ) {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./sw.js').catch(function () {});
+          });
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-BouqGxPa.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BVZD0uc-.css">
+  </head>
+  <body>
+    <noscript>
+      <div style="max-width: 480px; margin: 0 auto; padding: 24px 20px; font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-size: 15px; line-height: 1.65; color: #191f28; background: #f2f4f6">
+        <h1 style="font-size: 20px">안심신호등</h1>
+        <p style="font-weight: 600">무료 · 비수익 · 광고 없음</p>
+        <p>이 서비스는 자바스크립트가 있어야 동작합니다. 브라우저 설정에서 자바스크립트를 켜 주세요.</p>
+        <p>
+          본 서비스는 정보 제공 목적의 무료·비수익 참고 도구이며, 투자 자문·법률·세무 대리가 아닙니다. 외부 공개 API·시세·세법 가정에 기반하므로 정확성·실시간성을 보증하지 않으며, 본 서비스 이용 및 판단으로 발생한 직·간접적 손해(오입금, 거래 손실, 세무·신고 오류, 에어드랍 미지급 등)에 대해 제작자(안심랩)는 어떠한 법적·금전적 배상 책임도 지지 않습니다.
+        </p>
+        <p>표시되는 위험 신호는 공개 보안 데이터(GoPlus Security 등) 기준 참고 안내이며, 특정 주소·서비스의 사기 여부를 단정하거나 보증하지 않습니다.</p>
+        <p style="font-weight: 600">제작·운영: 안심랩 (AnsimLab)</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>
